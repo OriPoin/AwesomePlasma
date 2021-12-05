@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Plasma (Awesome)
+Comment=Plasam (Awesome)
+TryExec=/usr/local/bin/startplasma-awesome
+Exec=/usr/local/bin/startplasma-awesome
+Type=Application
+Keywords=Window manager

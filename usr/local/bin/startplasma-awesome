@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export KDEWM=awesome
+
+/usr/bin/startplasma-x11
