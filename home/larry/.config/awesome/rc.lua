@@ -243,7 +243,7 @@ clientkeys =
         {modkey, "Shift"},
         "c",
         function(c)
-            if c.class ~= "Plasma" then
+            if c.class ~= "plasmashell" then
                 c:kill()
             end
         end,
