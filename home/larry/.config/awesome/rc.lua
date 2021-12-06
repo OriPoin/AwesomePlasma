@@ -243,7 +243,7 @@ clientkeys =
         {modkey, "Shift"},
         "c",
         function(c)
-            if c.class ~= "plasmashell" then
+            if (c.name ~= "Plasma" and c.name ~= "Desktop — Plasma") then
                 c:kill()
             end
         end,
@@ -252,7 +252,14 @@ clientkeys =
             group = "client"
         }
     ),
-    awful.key({modkey}, "t", awful.client.floating.toggle, {description = "toggle floating", group = "client"})
+    awful.key(
+        {modkey},
+        "t",
+        function()
+            awful.layout.inc(1) -- Actually, toggle between floating and titling mode
+        end,
+        {description = "toggle floating", group = "client"}
+    )
 )
 
 -- Bind all key numbers to tags.
@@ -358,7 +365,6 @@ awful.rules.rules = {
             focusable = false, -- Dont send focus to desktop windows
             sticky = true, -- Visible on all tags
             floating = true, -- For tiling layouts, do not tile the desktop
-            maximized = true,
             fullscreen = true
         }
     },
@@ -371,7 +377,7 @@ awful.rules.rules = {
     },
     -- Weird windows
     {
-        rule = {class = "TelegramDesktop", "systemsettings5"},
+        rule = {class = "systemsettings"},
         properties = {
             maximized = false
         }
